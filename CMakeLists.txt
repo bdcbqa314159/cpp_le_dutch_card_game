@@ -11,6 +11,7 @@ MESSAGE(STATUS "the source directory is: ${CMAKE_SOURCE_DIR}")
 
 add_subdirectory(libraries)
 add_subdirectory(work)
+add_subdirectory(cards)
 
 
 
