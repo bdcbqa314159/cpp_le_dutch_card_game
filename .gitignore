@@ -150,4 +150,3 @@ docs
 **/.DS_Store
 compile_commands.json
 resources
-cards/*.cpp

@@ -1,0 +1,8 @@
+#pragma once
+#ifndef CARDS_LIB
+#define CARDS_LIB
+
+#include "./includes/cards_common.hpp"  // IWYU pragma: keep
+#include "./includes/Cards.hpp"        // IWYU pragma: keep
+
+#endif // CARDS_LIB
