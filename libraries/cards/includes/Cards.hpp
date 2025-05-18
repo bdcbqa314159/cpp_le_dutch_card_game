@@ -17,11 +17,15 @@ class Card {
 
   size_t get_points() const;
 
+  bool is_hidden() const;
+  void turn_card();
+
   friend std::ostream& operator<<(std::ostream& os, const Card& card);
 
  private:
   Suit suit_;
   size_t value_;
+  bool hidden_;
 };
 
 size_t get_card_number(const Card&);

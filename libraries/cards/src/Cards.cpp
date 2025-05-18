@@ -4,7 +4,12 @@ namespace cards {
 
 Card::Card(Suit suit, size_t value) : suit_(suit), value_(value) {
   assert(value >= 1 && value <= 13);
+  hidden_ = true;
 }
+
+bool Card::is_hidden() const { return hidden_; }
+
+void Card::turn_card() { hidden_ = !hidden_; }
 
 Suit Card::get_suit() const { return suit_; }
 
@@ -19,6 +24,11 @@ size_t Card::get_points() const {
 
 std::ostream& operator<<(std::ostream& os, const Card& card) {
   std::string value_str;
+
+  if (card.is_hidden()) {
+    os << "??";
+    return os;
+  }
 
   if (card.value_ == 1) {
     value_str = "A";
