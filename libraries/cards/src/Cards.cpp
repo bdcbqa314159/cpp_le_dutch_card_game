@@ -1,9 +1,20 @@
 #include "Cards.hpp"  // IWYU pragma: keep
 
+#include <cstddef>
+
 namespace cards {
 
 Card::Card(Suit suit, size_t value) : suit_(suit), value_(value) {
   assert(value >= 1 && value <= 13);
+  hidden_ = true;
+}
+
+Card::Card(size_t number) {
+  assert(number >= 0 && number < 52);
+  size_t suit = number / 13;
+  size_t value = number - suit * 13 + 1;
+  suit_ = static_cast<Suit>(suit);
+  value_ = value;
   hidden_ = true;
 }
 
@@ -20,6 +31,12 @@ size_t Card::get_points() const {
     return 0;
   }
   return get_value();
+}
+
+size_t Card::get_number() const {
+  size_t suit = static_cast<size_t>(suit_);
+  size_t value = value_;
+  return suit * 13 + value - 1;
 }
 
 std::ostream& operator<<(std::ostream& os, const Card& card) {

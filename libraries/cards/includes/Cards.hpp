@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 #ifndef CARDS_LIB_CARDS_HPP
 #define CARDS_LIB_CARDS_HPP
 #include <cassert>
@@ -9,23 +10,27 @@ namespace cards {
 
 class Card {
  public:
+  Card() = default;
   Card(Suit suit, size_t value);
+  Card(size_t);
 
   Suit get_suit() const;
 
   size_t get_value() const;
 
+  size_t get_number() const;
+
   size_t get_points() const;
 
   bool is_hidden() const;
-  void turn_card();
 
   friend std::ostream& operator<<(std::ostream& os, const Card& card);
+  void turn_card();
 
  private:
-  Suit suit_;
-  size_t value_;
-  bool hidden_;
+  Suit suit_{0};
+  size_t value_{0};
+  bool hidden_{true};
 };
 
 size_t get_card_number(const Card&);
