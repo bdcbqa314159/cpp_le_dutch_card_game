@@ -2,7 +2,6 @@
 
 #include <random>
 
-// using namespace utils;
 namespace cards {
 
 InitialDeck::InitialDeck() {
