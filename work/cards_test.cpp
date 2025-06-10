@@ -1,5 +1,6 @@
 #include "cards_lib"  // IWYU pragma: keep
 #include "utils_lib"  // IWYU pragma: keep
+#include <vector>
 
 using namespace cards;
 
