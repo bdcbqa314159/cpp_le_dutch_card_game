@@ -6,8 +6,9 @@ std::ostream& operator<<(std::ostream& os, const std::u8string& str) {
   return os.write(reinterpret_cast<const char*>(str.data()), str.size());
 }
 
-std::ostream& operator<<(std::ostream& os, const Suit& suit) {
+std::ostream& operator<<(std::ostream& os, const Suit& suit) { 
   std::u8string symbol;
+
   switch (suit) {
     case Suit::heart:
       symbol = u8"\u2661";
