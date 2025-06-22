@@ -25,8 +25,8 @@ int main() {
   card.turn_card();
   deck_stack_visible.push(std::move(card));
 
-  std::cout << "table: < " << deck_stack_hidden.top() << " "
-            << deck_stack_visible.top() << " >" << std::endl;
+  std::cout << deck_stack_visible.top() << " >" << std::endl;
 
+  //"table: < " << deck_stack_hidden.top() << " "
   return 0;
 }
