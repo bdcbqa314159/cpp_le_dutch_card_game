@@ -1,0 +1,12 @@
+    1  it status
+    2  git status
+    3  git log --oneline
+    4  git status
+    5  git add . 
+    6  git commit -m "Windows3"
+    7  git branch 
+    8  git checkout -b test
+    9  git push origin test
+   10  git checkout develop_cards
+   11  history
+   12  history >> test.txt

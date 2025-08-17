@@ -2,7 +2,6 @@ project(utils)
 
 set(includes includes/)
 set(sources src/common.cpp
-            src/functions.cpp
 )
 
 add_library(${PROJECT_NAME} ${sources})
