@@ -3,6 +3,9 @@
 namespace cards {
 
 std::ostream& operator<<(std::ostream& os, const std::u8string& str) {
+#ifdef _WIN32
+  SetConsoleOutputCP(CP_UTF8);  // Set console output to UTF-8 encoding
+#endif
   return os.write(reinterpret_cast<const char*>(str.data()), str.size());
 }
 
@@ -25,6 +28,7 @@ std::ostream& operator<<(std::ostream& os, const Suit& suit) {
     default:
       symbol = u8"-error-";
   }
+
   os << symbol;
   return os;
 }

@@ -5,6 +5,10 @@
 #include <array>
 #include <iostream>
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 namespace cards {
 
 // to be able to cout u8string:

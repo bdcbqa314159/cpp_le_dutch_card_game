@@ -5,9 +5,9 @@
 #include "cards_lib"  // IWYU pragma: keep
 #include "utils_lib"  // IWYU pragma: keep
 
-#ifdef _WIN32
-#include <Windows.h>
-#endif
+//#ifdef _WIN32
+//#include <Windows.h>
+//#endif
 
 using namespace cards;
 
@@ -29,9 +29,9 @@ int main() {
   card.turn_card();
   deck_stack_visible.push(std::move(card));
 
-  #ifdef _WIN32 
-    SetConsoleOutputCP(CP_UTF8);  // Set console output to UTF-8 encoding
-  #endif
+  //#ifdef _WIN32 
+  //  SetConsoleOutputCP(CP_UTF8);  // Set console output to UTF-8 encoding
+  //#endif
   std::cout << deck_stack_visible.top() << " >" << std::endl;
 
   //"table: < " << deck_stack_hidden.top() << " "
